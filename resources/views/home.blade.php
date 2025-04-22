@@ -90,7 +90,6 @@
                         <div class = "min-w-[200px] h-[350px] bg-white drop-shadow group-hover:drop-shadow-2xl rounded-xl flex flex-col p-4 mr-8 duration-100">
                             <div class = "overflow-hidden rounded-xl">
                                 <img class = "w-full h-[220px] rounded-xl group-hover:scale-110 duration-300"src="{{$movieImage}}" alt="">
-
                             </div>
                             <span class = "font-inter font-bold text-xl mt-3 line-clamp-1 group-hover:line-clamp-none">{{$movieTitle}}</span>
                             <span class = "font-inter text-sm mt-1">{{$movieYear}}</span>

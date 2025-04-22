@@ -5,7 +5,7 @@
             <a href="/tvshow" class="uppercase text-sm mx-5 text-black hover:text-purple-900 duration-300 font-inter">TVShow</a>
             </div>
             <div class="w-1/3 flex items-center justify-center">  
-            <a href="/filmrek" class="font-bold text-3xl font-Quicksand">MLIF</a>
+            <a href="/" class="font-bold text-3xl font-Quicksand">FILMREK</a>
 
             </div>
             <div class="w-1/3 flex rows pr-8 justify-end">

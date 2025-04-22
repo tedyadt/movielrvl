@@ -92,4 +92,38 @@ class MovieController extends Controller
 
         ]);
     }
+    public function movies (){
+        $baseUrl = env('MOVIE_DB_BASE_URL');
+        $imageBaseUrl = env ('MOVIE_DB_IMAGE_BASE_URL');
+        dd($imageBaseUrl);
+        $apiKey = env ('MOVIE_DB_API_KEY');
+        $sortBy = 'popularity.desc';
+        $page = 1;
+        $minimalVote =100;
+        $MovieResponse = Http::get("{$baseUrl}/discover/movie",[
+            'api_key' => $apiKey,
+            'sort_by' => $sortBy,
+            'page' => $page,
+            'vote_count.gte' => $minimalVote,
+        ]);
+
+        $movieArray = [];
+        //check response
+        if ($MovieResponse->successful()) {
+            $resultArray = $MovieResponse->object()->results;
+            foreach($resultArray as $item){  
+                //save respon di bannar array
+                array_push( $movieArray, $item);
+            }
+        }
+        return view('movie',[
+            'baseUrl' => $baseUrl,
+            'imageBaseUrl' => $imageBaseUrl,
+            'apiKey' => $apiKey,
+            'movies' => $movieArray,
+            'sortBy' => $sortBy,
+            'page' => $page,
+            'minimalVote' => $minimalVote,
+        ]);
+    }
 }
